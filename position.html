@@ -1,0 +1,528 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>搶票系統</title>
+        
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+        <!-- Load external CSS styles -->
+        <link rel="stylesheet" href="css/position.css">
+
+        <!-- Import Jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+
+    <body onload="setSeatStatus()">
+
+        <div class="topnav">
+            <div class="nav_div">
+                <img class="logo" src="images/logo_sample.png">
+                <img class="contact_logo" src="images/logo_facebook.png">
+                <img class="contact_logo" src="images/logo_line.png">
+                <img class="contact_logo" src="images/logo_instagram.png">
+            </div>
+            <div class="nav_div_search">
+                <div class="search_div">
+                    <input class="search" placeholder="尋找表演...">
+                    <img class="search_logo" src="images/nav_search.png">
+                </div>
+            </div>
+            <div class="nav_div">
+                <div class="nav_div">
+                    <img class="nav_logo" src="images/nav_user.png">
+                    <a class="nav_text">使用者姓名</a>
+                </div>
+                <div class="nav_div">
+                    <img class="nav_logo" src="images/nav_cart.png">
+                    <a class="nav_text">購物車</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="navbar">
+            <button class="nav_button" href="#home">節目資訊</a>
+            <button class="nav_button" href="#news">最新消息</a>
+            <button class="nav_button" href="#contact">常見問題</a>
+            <button class="nav_button"  onclick="location.href='search.html'">訂單查詢</a>
+        </div>
+
+        <div class="content">
+            <div class="purchase_flow">
+                <div class="flow_div">
+                    <button class="flow_button" onclick="location.href='index.html'">選擇場次</button>
+                    <button class="flow_dot" onclick="location.href='index.html'"></button>
+                </div>
+                <div class="flow_div">
+                    <button class="flow_button_choose">選擇座位</button>
+                    <button class="flow_dot_choose"></button>
+                </div>
+                <div class="flow_div">
+                    <button class="flow_button">購票確認</button>
+                    <button class="flow_dot"></button>
+                </div>
+                <div class="flow_div">
+                    <button class="flow_button">付款</button>
+                    <button class="flow_dot"></button>
+                </div>
+                <div class="flow_div">
+                    <button class="flow_button">完成訂單</button>
+                    <button class="flow_dot"></button>
+                </div>               
+            </div>
+            <div class="meta_info">
+                <h class="meta_title">BTOB 10TH ANNIVERSARY CONCERT 2022 BTOB TIME [Be Together]</h>
+                <br>
+                <h class="meta_content">地點：JAMSIL INDOOR STADIUM 蠶室室內體育館</h>
+                <h class="meta_content">場次：2022.03.18 (五) 18:30PM</h>
+            </div>
+        </div>
+
+        <div class="position_div">
+            <div class="content-left">
+                <img class="position" src="images/sample_position2.png" width="1145" height="803" usemap="#positionmap">
+                <map name="positionmap">
+                    <area data-bs-toggle="modal" data-bs-target="#block1Modal" shape="poly" title="左側1區" coords="20,50,173,75.5,173,370,20,349.5"></a>
+                    <area data-bs-toggle="modal" data-bs-target="#block2Modal" shape="rect" title="中間2區" coords="190,75.5,490.5,370"></a>
+                    <area data-bs-toggle="modal" data-bs-target="#block3Modal" shape="poly" title="右側3區" coords="507.5,75.5,660.5,50,660.5,349.5,507.5,370"></a>
+                </map>
+            </div>
+            <div class="content-right">
+                <div class="block_info">
+                    <h class="detail_title">銷售狀況</h>
+                    <div class="detail_div">
+                        <div class="detail_color">顏色</div>
+                        <div class="detail_block">票區</div>
+                        <div class="detail_price">票價</div>
+                        <div class="detail_empty">剩餘座位</div>
+                    </div>
+                    <div class="detail_div" data-bs-toggle="modal" data-bs-target="#block1Modal">
+                        <div class="detail_color">
+                            <img class="block_color" src="images/block_1.png">
+                        </div>
+                        <div class="detail_block">左側1區</div>
+                        <div class="detail_price">500元</div>
+                        <div class="detail_empty">50</div>
+                    </div>
+                    <div class="detail_div" data-bs-toggle="modal" data-bs-target="#block2Modal">
+                        <div class="detail_color">
+                            <img class="block_color" src="images/block_2.png">
+                        </div>
+                        <div class="detail_block">中間2區</div>
+                        <div class="detail_price">1000元</div>
+                        <div class="detail_empty">100</div>
+                    </div>
+                    <div class="detail_div" data-bs-toggle="modal" data-bs-target="#block3Modal">
+                        <div class="detail_color">
+                            <img class="block_color" src="images/block_3.png">
+                        </div>
+                        <div class="detail_block">右側3區</div>
+                        <div class="detail_price">500元</div>
+                        <div class="detail_empty">50</div>
+                    </div>
+                </div>
+                <div class="block_info" style="margin-top: 10px;">
+                    <h class="detail_title">已選擇座位：</h>
+                    <span class="meta_content" id="choose_seat"></span>
+                </div>
+                <div class="step_button_div">
+                    <div class="button_previous_div"  onclick="location.href='index.html'">
+                        <button class="step_button">重選日期</button>
+                    </div>
+                    <div class="button_next_div" onclick="seatSubmit()">
+                        <button class="step_button">確認座位</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottombar">
+            <button class="bottom_link" href="#home">about us</a>
+            <button class="bottom_link" href="#news">服務條款</a>
+            <button class="bottom_link" href="#contact">聯絡資訊</a>
+            <button class="bottom_link" href="#about">隱私權</a>
+        </div>
+
+        <!-- Modal 1 -->
+        <div class="modal fade" id="block1Modal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h6 class="modal-title">座位選擇─左側1區</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <span class="information" id="information_1"></span>
+                        <div style="margin-top: 20px;">
+                            <div class="choose_div">
+                                <div style="text-align: center; margin-right: 10px;">
+                                    <h class="row_info"> </h><br>
+                                    <h class="row_info">A</h><br>
+                                    <h class="row_info">B</h><br>
+                                    <h class="row_info">C</h><br>
+                                    <h class="row_info">D</h><br>
+                                    <h class="row_info">E</h><br>
+                                    <h class="row_info">F</h><br>
+                                    <h class="row_info">G</h><br>
+                                    <h class="row_info">H</h><br>
+                                    <h class="row_info">I</h><br>
+                                    <h class="row_info">J</h><br>
+                                </div>
+                                <div class="choose_div2">
+                                    <div>
+                                        <h class="row_info">1</h><br>
+                                        <input type="checkbox" id="A1" onclick="positionChoose('A1')"><br>
+                                        <input type="checkbox" id="B1" onclick="positionChoose('B1')"><br>
+                                        <input type="checkbox" id="C1" onclick="positionChoose('C1')"><br>
+                                        <input type="checkbox" id="D1" onclick="positionChoose('D1')"><br>
+                                        <input type="checkbox" id="E1" onclick="positionChoose('E1')"><br>
+                                        <input type="checkbox" id="F1" onclick="positionChoose('F1')"><br>
+                                        <input type="checkbox" id="G1" onclick="positionChoose('G1')"><br>
+                                        <input type="checkbox" id="H1" onclick="positionChoose('H1')"><br>
+                                        <input type="checkbox" id="I1" onclick="positionChoose('I1')"><br>
+                                        <input type="checkbox" id="J1" onclick="positionChoose('J1')"><br>
+                                    </div>
+                                    <div style="margin-top: 10px;">
+                                        <h class="row_info">2</h><br>
+                                        <input type="checkbox" id="A2" onclick="positionChoose('A2')"><br>
+                                        <input type="checkbox" id="B2" onclick="positionChoose('B2')"><br>
+                                        <input type="checkbox" id="C2" onclick="positionChoose('C2')"><br>
+                                        <input type="checkbox" id="D2" onclick="positionChoose('D2')"><br>
+                                        <input type="checkbox" id="E2" onclick="positionChoose('E2')"><br>
+                                        <input type="checkbox" id="F2" onclick="positionChoose('F2')"><br>
+                                        <input type="checkbox" id="G2" onclick="positionChoose('G2')"><br>
+                                        <input type="checkbox" id="H2" onclick="positionChoose('H2')"><br>
+                                        <input type="checkbox" id="I2" onclick="positionChoose('I2')"><br>
+                                        <input type="checkbox" id="J2" onclick="positionChoose('J2')"><br>
+                                    </div>
+                                    <div style="margin-top: 20px;">
+                                        <h class="row_info">3</h><br>
+                                        <input type="checkbox" id="A3" onclick="positionChoose('A3')"><br>
+                                        <input type="checkbox" id="B3" onclick="positionChoose('B3')"><br>
+                                        <input type="checkbox" id="C3" onclick="positionChoose('C3')"><br>
+                                        <input type="checkbox" id="D3" onclick="positionChoose('D3')"><br>
+                                        <input type="checkbox" id="E3" onclick="positionChoose('E3')"><br>
+                                        <input type="checkbox" id="F3" onclick="positionChoose('F3')"><br>
+                                        <input type="checkbox" id="G3" onclick="positionChoose('G3')"><br>
+                                        <input type="checkbox" id="H3" onclick="positionChoose('H3')"><br>
+                                        <input type="checkbox" id="I3" onclick="positionChoose('I3')"><br>
+                                        <input type="checkbox" id="J3" onclick="positionChoose('J3')"><br>
+                                    </div>
+                                    <div style="margin-top: 30px;">
+                                        <h class="row_info">4</h><br>
+                                        <input type="checkbox" id="A4" onclick="positionChoose('A4')"><br>
+                                        <input type="checkbox" id="B4" onclick="positionChoose('B4')"><br>
+                                        <input type="checkbox" id="C4" onclick="positionChoose('C4')"><br>
+                                        <input type="checkbox" id="D4" onclick="positionChoose('D4')"><br>
+                                        <input type="checkbox" id="E4" onclick="positionChoose('E4')"><br>
+                                        <input type="checkbox" id="F4" onclick="positionChoose('F4')"><br>
+                                        <input type="checkbox" id="G4" onclick="positionChoose('G4')"><br>
+                                        <input type="checkbox" id="H4" onclick="positionChoose('H4')"><br>
+                                        <input type="checkbox" id="I4" onclick="positionChoose('I4')"><br>
+                                        <input type="checkbox" id="J4" onclick="positionChoose('J4')"><br>
+                                    </div>
+                                    <div style="margin-top: 40px;">
+                                        <h class="row_info">5</h><br>
+                                        <input type="checkbox" id="A5" onclick="positionChoose('A5')"><br>
+                                        <input type="checkbox" id="B5" onclick="positionChoose('B5')"><br>
+                                        <input type="checkbox" id="C5" onclick="positionChoose('C5')"><br>
+                                        <input type="checkbox" id="D5" onclick="positionChoose('D5')"><br>
+                                        <input type="checkbox" id="E5" onclick="positionChoose('E5')"><br>
+                                        <input type="checkbox" id="F5" onclick="positionChoose('F5')"><br>
+                                        <input type="checkbox" id="G5" onclick="positionChoose('G5')"><br>
+                                        <input type="checkbox" id="H5" onclick="positionChoose('H5')"><br>
+                                        <input type="checkbox" id="I5" onclick="positionChoose('I5')"><br>
+                                        <input type="checkbox" id="J5" onclick="positionChoose('J5')"><br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light bottom_back" data-bs-dismiss="modal">確定座位</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal 2 -->
+        <div class="modal fade" id="block2Modal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h6 class="modal-title">座位選擇─中間2區</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <span class="information" id="information_2"></span>
+                        <div style="margin-top: 20px;">
+                            <div class="choose_div">
+                                <div style="text-align: center; margin-right: 10px;">
+                                    <h class="row_info"> </h><br>
+                                    <h class="row_info">A</h><br>
+                                    <h class="row_info">B</h><br>
+                                    <h class="row_info">C</h><br>
+                                    <h class="row_info">D</h><br>
+                                    <h class="row_info">E</h><br>
+                                    <h class="row_info">F</h><br>
+                                    <h class="row_info">G</h><br>
+                                    <h class="row_info">H</h><br>
+                                    <h class="row_info">I</h><br>
+                                    <h class="row_info">J</h><br>
+                                </div>
+                                <div class="choose_div2">
+                                    <div>
+                                        <h class="row_info">6</h><br>
+                                        <input type="checkbox" id="A6" onclick="positionChoose('A6')"><br>
+                                        <input type="checkbox" id="B6" onclick="positionChoose('B6')"><br>
+                                        <input type="checkbox" id="C6" onclick="positionChoose('C6')"><br>
+                                        <input type="checkbox" id="D6" onclick="positionChoose('D6')"><br>
+                                        <input type="checkbox" id="E6" onclick="positionChoose('E6')"><br>
+                                        <input type="checkbox" id="F6" onclick="positionChoose('F6')"><br>
+                                        <input type="checkbox" id="G6" onclick="positionChoose('G6')"><br>
+                                        <input type="checkbox" id="H6" onclick="positionChoose('H6')"><br>
+                                        <input type="checkbox" id="I6" onclick="positionChoose('I6')"><br>
+                                        <input type="checkbox" id="J6" onclick="positionChoose('J6')"><br>
+                                    </div>
+                                    <div>
+                                        <h class="row_info">7</h><br>
+                                        <input type="checkbox" id="A7" onclick="positionChoose('A7')"><br>
+                                        <input type="checkbox" id="B7" onclick="positionChoose('B7')"><br>
+                                        <input type="checkbox" id="C7" onclick="positionChoose('C7')"><br>
+                                        <input type="checkbox" id="D7" onclick="positionChoose('D7')"><br>
+                                        <input type="checkbox" id="E7" onclick="positionChoose('E7')"><br>
+                                        <input type="checkbox" id="F7" onclick="positionChoose('F7')"><br>
+                                        <input type="checkbox" id="G7" onclick="positionChoose('G7')"><br>
+                                        <input type="checkbox" id="H7" onclick="positionChoose('H7')"><br>
+                                        <input type="checkbox" id="I7" onclick="positionChoose('I7')"><br>
+                                        <input type="checkbox" id="J7" onclick="positionChoose('J7')"><br>
+                                    </div>
+                                    <div>
+                                        <h class="row_info">8</h><br>
+                                        <input type="checkbox" id="A8" onclick="positionChoose('A8')"><br>
+                                        <input type="checkbox" id="B8" onclick="positionChoose('B8')"><br>
+                                        <input type="checkbox" id="C8" onclick="positionChoose('C8')"><br>
+                                        <input type="checkbox" id="D8" onclick="positionChoose('D8')"><br>
+                                        <input type="checkbox" id="E8" onclick="positionChoose('E8')"><br>
+                                        <input type="checkbox" id="F8" onclick="positionChoose('F8')"><br>
+                                        <input type="checkbox" id="G8" onclick="positionChoose('G8')"><br>
+                                        <input type="checkbox" id="H8" onclick="positionChoose('H8')"><br>
+                                        <input type="checkbox" id="I8" onclick="positionChoose('I8')"><br>
+                                        <input type="checkbox" id="J8" onclick="positionChoose('J8')"><br>
+                                    </div>
+                                    <div>
+                                        <h class="row_info">9</h><br>
+                                        <input type="checkbox" id="A9" onclick="positionChoose('A9')"><br>
+                                        <input type="checkbox" id="B9" onclick="positionChoose('B9')"><br>
+                                        <input type="checkbox" id="C9" onclick="positionChoose('C9')"><br>
+                                        <input type="checkbox" id="D9" onclick="positionChoose('D9')"><br>
+                                        <input type="checkbox" id="E9" onclick="positionChoose('E9')"><br>
+                                        <input type="checkbox" id="F9" onclick="positionChoose('F9')"><br>
+                                        <input type="checkbox" id="G9" onclick="positionChoose('G9')"><br>
+                                        <input type="checkbox" id="H9" onclick="positionChoose('H9')"><br>
+                                        <input type="checkbox" id="I9" onclick="positionChoose('I9')"><br>
+                                        <input type="checkbox" id="J9" onclick="positionChoose('J9')"><br>
+                                    </div>
+                                    <div>
+                                        <h class="row_info">10</h><br>
+                                        <input type="checkbox" id="A10" onclick="positionChoose('A10')"><br>
+                                        <input type="checkbox" id="B10" onclick="positionChoose('B10')"><br>
+                                        <input type="checkbox" id="C10" onclick="positionChoose('C10')"><br>
+                                        <input type="checkbox" id="D10" onclick="positionChoose('D10')"><br>
+                                        <input type="checkbox" id="E10" onclick="positionChoose('E10')"><br>
+                                        <input type="checkbox" id="F10" onclick="positionChoose('F10')"><br>
+                                        <input type="checkbox" id="G10" onclick="positionChoose('G10')"><br>
+                                        <input type="checkbox" id="H10" onclick="positionChoose('H10')"><br>
+                                        <input type="checkbox" id="I10" onclick="positionChoose('I10')"><br>
+                                        <input type="checkbox" id="J10" onclick="positionChoose('J10')"><br>
+                                    </div>
+                                    <div>
+                                        <h class="row_info">11</h><br>
+                                        <input type="checkbox" id="A11" onclick="positionChoose('A11')"><br>
+                                        <input type="checkbox" id="B11" onclick="positionChoose('B11')"><br>
+                                        <input type="checkbox" id="C11" onclick="positionChoose('C11')"><br>
+                                        <input type="checkbox" id="D11" onclick="positionChoose('D11')"><br>
+                                        <input type="checkbox" id="E11" onclick="positionChoose('E11')"><br>
+                                        <input type="checkbox" id="F11" onclick="positionChoose('F11')"><br>
+                                        <input type="checkbox" id="G11" onclick="positionChoose('G11')"><br>
+                                        <input type="checkbox" id="H11" onclick="positionChoose('H11')"><br>
+                                        <input type="checkbox" id="I11" onclick="positionChoose('I11')"><br>
+                                        <input type="checkbox" id="J11" onclick="positionChoose('J11')"><br>
+                                    </div>
+                                    <div>
+                                        <h class="row_info">12</h><br>
+                                        <input type="checkbox" id="A12" onclick="positionChoose('A12')"><br>
+                                        <input type="checkbox" id="B12" onclick="positionChoose('B12')"><br>
+                                        <input type="checkbox" id="C12" onclick="positionChoose('C12')"><br>
+                                        <input type="checkbox" id="D12" onclick="positionChoose('D12')"><br>
+                                        <input type="checkbox" id="E12" onclick="positionChoose('E12')"><br>
+                                        <input type="checkbox" id="F12" onclick="positionChoose('F12')"><br>
+                                        <input type="checkbox" id="G12" onclick="positionChoose('G12')"><br>
+                                        <input type="checkbox" id="H12" onclick="positionChoose('H12')"><br>
+                                        <input type="checkbox" id="I12" onclick="positionChoose('I12')"><br>
+                                        <input type="checkbox" id="J12" onclick="positionChoose('J12')"><br>
+                                    </div>
+                                    <div>
+                                        <h class="row_info">13</h><br>
+                                        <input type="checkbox" id="A13" onclick="positionChoose('A13')"><br>
+                                        <input type="checkbox" id="B13" onclick="positionChoose('B13')"><br>
+                                        <input type="checkbox" id="C13" onclick="positionChoose('C13')"><br>
+                                        <input type="checkbox" id="D13" onclick="positionChoose('D13')"><br>
+                                        <input type="checkbox" id="E13" onclick="positionChoose('E13')"><br>
+                                        <input type="checkbox" id="F13" onclick="positionChoose('F13')"><br>
+                                        <input type="checkbox" id="G13" onclick="positionChoose('G13')"><br>
+                                        <input type="checkbox" id="H13" onclick="positionChoose('H13')"><br>
+                                        <input type="checkbox" id="I13" onclick="positionChoose('I13')"><br>
+                                        <input type="checkbox" id="J13" onclick="positionChoose('J13')"><br>
+                                    </div>
+                                    <div>
+                                        <h class="row_info">14</h><br>
+                                        <input type="checkbox" id="A14" onclick="positionChoose('A14')"><br>
+                                        <input type="checkbox" id="B14" onclick="positionChoose('B14')"><br>
+                                        <input type="checkbox" id="C14" onclick="positionChoose('C14')"><br>
+                                        <input type="checkbox" id="D14" onclick="positionChoose('D14')"><br>
+                                        <input type="checkbox" id="E14" onclick="positionChoose('E14')"><br>
+                                        <input type="checkbox" id="F14" onclick="positionChoose('F14')"><br>
+                                        <input type="checkbox" id="G14" onclick="positionChoose('G14')"><br>
+                                        <input type="checkbox" id="H14" onclick="positionChoose('H14')"><br>
+                                        <input type="checkbox" id="I14" onclick="positionChoose('I14')"><br>
+                                        <input type="checkbox" id="J14" onclick="positionChoose('J14')"><br>
+                                    </div>
+                                    <div>
+                                        <h class="row_info">15</h><br>
+                                        <input type="checkbox" id="A15" onclick="positionChoose('A15')"><br>
+                                        <input type="checkbox" id="B15" onclick="positionChoose('B15')"><br>
+                                        <input type="checkbox" id="C15" onclick="positionChoose('C15')"><br>
+                                        <input type="checkbox" id="D15" onclick="positionChoose('D15')"><br>
+                                        <input type="checkbox" id="E15" onclick="positionChoose('E15')"><br>
+                                        <input type="checkbox" id="F15" onclick="positionChoose('F15')"><br>
+                                        <input type="checkbox" id="G15" onclick="positionChoose('G15')"><br>
+                                        <input type="checkbox" id="H15" onclick="positionChoose('H15')"><br>
+                                        <input type="checkbox" id="I15" onclick="positionChoose('I15')"><br>
+                                        <input type="checkbox" id="J15" onclick="positionChoose('J15')"><br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light bottom_back" data-bs-dismiss="modal">確定座位</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal 3 -->
+        <div class="modal fade" id="block3Modal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h6 class="modal-title">座位選擇─右側3區</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <span class="information" id="information_3"></span>
+                        <div style="margin-top: 20px;">
+                            <div class="choose_div">
+                                <div style="text-align: center; margin-right: 10px; margin-top: 40px;">
+                                    <h class="row_info"> </h><br>
+                                    <h class="row_info">A</h><br>
+                                    <h class="row_info">B</h><br>
+                                    <h class="row_info">C</h><br>
+                                    <h class="row_info">D</h><br>
+                                    <h class="row_info">E</h><br>
+                                    <h class="row_info">F</h><br>
+                                    <h class="row_info">G</h><br>
+                                    <h class="row_info">H</h><br>
+                                    <h class="row_info">I</h><br>
+                                    <h class="row_info">J</h><br>
+                                </div>
+                                <div class="choose_div2">
+                                    <div style="margin-top: 40px;">
+                                        <h class="row_info">16</h><br>
+                                        <input type="checkbox" id="A16" onclick="positionChoose('A16')"><br>
+                                        <input type="checkbox" id="B16" onclick="positionChoose('B16')"><br>
+                                        <input type="checkbox" id="C16" onclick="positionChoose('C16')"><br>
+                                        <input type="checkbox" id="D16" onclick="positionChoose('D16')"><br>
+                                        <input type="checkbox" id="E16" onclick="positionChoose('E16')"><br>
+                                        <input type="checkbox" id="F16" onclick="positionChoose('F16')"><br>
+                                        <input type="checkbox" id="G16" onclick="positionChoose('G16')"><br>
+                                        <input type="checkbox" id="H16" onclick="positionChoose('H16')"><br>
+                                        <input type="checkbox" id="I16" onclick="positionChoose('I16')"><br>
+                                        <input type="checkbox" id="J16" onclick="positionChoose('J16')"><br>
+                                    </div>
+                                    <div style="margin-top: 30px;">
+                                        <h class="row_info">17</h><br>
+                                        <input type="checkbox" id="A17" onclick="positionChoose('A17')"><br>
+                                        <input type="checkbox" id="B17" onclick="positionChoose('B17')"><br>
+                                        <input type="checkbox" id="C17" onclick="positionChoose('C17')"><br>
+                                        <input type="checkbox" id="D17" onclick="positionChoose('D17')"><br>
+                                        <input type="checkbox" id="E17" onclick="positionChoose('E17')"><br>
+                                        <input type="checkbox" id="F17" onclick="positionChoose('F17')"><br>
+                                        <input type="checkbox" id="G17" onclick="positionChoose('G17')"><br>
+                                        <input type="checkbox" id="H17" onclick="positionChoose('H17')"><br>
+                                        <input type="checkbox" id="I17" onclick="positionChoose('I17')"><br>
+                                        <input type="checkbox" id="J17" onclick="positionChoose('J17')"><br>
+                                    </div>
+                                    <div style="margin-top: 20px;">
+                                        <h class="row_info">18</h><br>
+                                        <input type="checkbox" id="A18" onclick="positionChoose('A18')"><br>
+                                        <input type="checkbox" id="B18" onclick="positionChoose('B18')"><br>
+                                        <input type="checkbox" id="C18" onclick="positionChoose('C18')"><br>
+                                        <input type="checkbox" id="D18" onclick="positionChoose('D18')"><br>
+                                        <input type="checkbox" id="E18" onclick="positionChoose('E18')"><br>
+                                        <input type="checkbox" id="F18" onclick="positionChoose('F18')"><br>
+                                        <input type="checkbox" id="G18" onclick="positionChoose('G18')"><br>
+                                        <input type="checkbox" id="H18" onclick="positionChoose('H18')"><br>
+                                        <input type="checkbox" id="I18" onclick="positionChoose('I18')"><br>
+                                        <input type="checkbox" id="J18" onclick="positionChoose('J18')"><br>
+                                    </div>
+                                    <div style="margin-top: 10px;">
+                                        <h class="row_info">19</h><br>
+                                        <input type="checkbox" id="A19" onclick="positionChoose('A19')"><br>
+                                        <input type="checkbox" id="B19" onclick="positionChoose('B19')"><br>
+                                        <input type="checkbox" id="C19" onclick="positionChoose('C19')"><br>
+                                        <input type="checkbox" id="D19" onclick="positionChoose('D19')"><br>
+                                        <input type="checkbox" id="E19" onclick="positionChoose('E19')"><br>
+                                        <input type="checkbox" id="F19" onclick="positionChoose('F19')"><br>
+                                        <input type="checkbox" id="G19" onclick="positionChoose('G19')"><br>
+                                        <input type="checkbox" id="H19" onclick="positionChoose('H19')"><br>
+                                        <input type="checkbox" id="I19" onclick="positionChoose('I19')"><br>
+                                        <input type="checkbox" id="J19" onclick="positionChoose('J19')"><br>
+                                    </div>
+                                    <div>
+                                        <h class="row_info">20</h><br>
+                                        <input type="checkbox" id="A20" onclick="positionChoose('A20')"><br>
+                                        <input type="checkbox" id="B20" onclick="positionChoose('B20')"><br>
+                                        <input type="checkbox" id="C20" onclick="positionChoose('C20')"><br>
+                                        <input type="checkbox" id="D20" onclick="positionChoose('D20')"><br>
+                                        <input type="checkbox" id="E20" onclick="positionChoose('E20')"><br>
+                                        <input type="checkbox" id="F20" onclick="positionChoose('F20')"><br>
+                                        <input type="checkbox" id="G20" onclick="positionChoose('G20')"><br>
+                                        <input type="checkbox" id="H20" onclick="positionChoose('H20')"><br>
+                                        <input type="checkbox" id="I20" onclick="positionChoose('I20')"><br>
+                                        <input type="checkbox" id="J20" onclick="positionChoose('J20')"><br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light bottom_back" data-bs-dismiss="modal">確定座位</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Load external JavaScript -->
+        <script src="js/position.js"></script>
+        
+    </body>
+
+</html>

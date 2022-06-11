@@ -1,0 +1,132 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>搶票系統</title>
+        
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+        <!-- Load external CSS styles -->
+        <link rel="stylesheet" href="css/result.css">
+
+        <!-- Import Jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+
+    <body onload="getTransaction()">
+
+        <div class="topnav">
+            <div class="nav_div">
+                <img class="logo" src="images/logo_sample.png">
+                <img class="contact_logo" src="images/logo_facebook.png">
+                <img class="contact_logo" src="images/logo_line.png">
+                <img class="contact_logo" src="images/logo_instagram.png">
+            </div>
+            <div class="nav_div_search">
+                <div class="search_div">
+                    <input class="search" placeholder="尋找表演...">
+                    <img class="search_logo" src="images/nav_search.png">
+                </div>
+            </div>
+            <div class="nav_div">
+                <div class="nav_div">
+                    <img class="nav_logo" src="images/nav_user.png">
+                    <a class="nav_text">使用者姓名</a>
+                </div>
+                <div class="nav_div">
+                    <img class="nav_logo" src="images/nav_cart.png">
+                    <a class="nav_text">購物車</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="navbar">
+            <button class="nav_button" href="#home">節目資訊</a>
+            <button class="nav_button" href="#news">最新消息</a>
+            <button class="nav_button" href="#contact">常見問題</a>
+            <button class="nav_button" onclick="location.href='search.html'">訂單查詢</a>
+        </div>
+
+        <div class="content">
+            <div class="purchase_flow">
+                <div class="flow_div">
+                    <button class="flow_button" onclick="location.href='index.html'">選擇場次</button>
+                    <button class="flow_dot" onclick="location.href='index.html'"></button>
+                </div>
+                <div class="flow_div">
+                    <button class="flow_button" onclick="location.href='position.html'">選擇座位</button>
+                    <button class="flow_dot" onclick="location.href='position.html'"></button>
+                </div>
+                <div class="flow_div">
+                    <button class="flow_button" onclick="location.href='information.html'">購票確認</button>
+                    <button class="flow_dot" onclick="location.href='information.html'"></button>
+                </div>
+                <div class="flow_div">
+                    <button class="flow_button">付款</button>
+                    <button class="flow_dot"></button>
+                </div>
+                <div class="flow_div">
+                    <button class="flow_button_choose">完成訂單</button>
+                    <button class="flow_dot_choose"></button>
+                </div>               
+            </div> 
+            <div class="result_div">
+                <img class="result_pic" src="images/check.png">
+                <br>
+                <h class="result_title">恭喜您，已成功購票！</h>
+                <h class="result_content">若欲更改或取消訂單，請洽客服中心。</h>
+            </div>
+        </div>
+
+        <div class="content_div">
+            <div class="content_ticket">
+                <h class="content_title">訂單資訊確認：</h>
+                <br>
+                <div class="input_div">
+                    <h class="content_detail">訂購人姓名：</h>
+                    <h class="content_detail" id="username"></h>
+                </div>
+                <div class="input_div">
+                    <h class="content_detail">連絡電話：</h>
+                    <h class="content_detail" id="userphone"></h>
+                </div>
+                <div class="input_div">
+                    <h class="content_detail">聯絡信箱：</h>
+                    <h class="content_detail" id="useremail"></h>
+                </div>
+                <div class="input_div">
+                    <h class="content_detail">訂單編號：</h>
+                    <h class="content_detail" id="transactionid"></h>
+                </div>
+                <br>
+                <table class="ticket_table" id="info_table">
+                    <rowgroup span="4" style="background-color: gray;"></colgroup>
+                    <tr>
+                        <th>場次/日期</th>
+                        <th>場地/區域</th>
+                        <th>座位</th>
+                        <th>票價(元)</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="bottombar">
+            <button class="bottom_link" href="#home">about us</a>
+            <button class="bottom_link" href="#news">服務條款</a>
+            <button class="bottom_link" href="#contact">聯絡資訊</a>
+            <button class="bottom_link" href="#about">隱私權</a>
+        </div>
+        
+        <!-- Load external JavaScript -->
+        <script src="js/result.js"></script>
+        
+    </body>
+
+</html>

@@ -1,0 +1,92 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>搶票系統</title>
+        
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+        <!-- Load external CSS styles -->
+        <link rel="stylesheet" href="css/index.css">
+
+    </head>
+
+    <body>
+
+        <div class="topnav">
+            <div class="nav_div">
+                <img class="logo" src="images/logo_sample.png">
+                <img class="contact_logo" src="images/logo_facebook.png" title="Facebook">
+                <img class="contact_logo" src="images/logo_line.png" title="Line">
+                <img class="contact_logo" src="images/logo_instagram.png" title="Instagram">
+            </div>
+            <div class="nav_div_search">
+                <div class="search_div">
+                    <input class="search" placeholder="尋找表演...">
+                    <img class="search_logo" src="images/nav_search.png">
+                </div>
+            </div>
+            <div class="nav_div">
+                <div class="nav_div">
+                    <img class="nav_logo" src="images/nav_user.png">
+                    <h class="nav_text">使用者姓名</h>
+                </div>
+                <div class="nav_div">
+                    <img class="nav_logo" src="images/nav_cart.png">
+                    <h class="nav_text">購物車</h>
+                </div>
+            </div>
+        </div>
+
+        <div class="navbar">
+            <button class="nav_button">節目資訊</a>
+            <button class="nav_button">最新消息</a>
+            <button class="nav_button">常見問題</a>
+            <button class="nav_button" onclick="location.href='search.html'">訂單查詢</a>
+        </div>
+
+        <div class="content">
+            <div class="content-left">
+                <img class="poster" src="images/sample_poster.jpeg">
+                <div class="concert_info">
+                    <button class="info">節目票價</button>
+                    <button class="info">購票方式</button>
+                    <button class="info">取票方式</button>
+                    <button class="info">退票方式</button>
+                    <button class="info">注意事項</button>
+                </div>
+            </div>
+            <div class="content-right">
+                <div class="meta_info">
+                    <h class="meta_title"> 2022 BTOB TIME [Be Together]</h>
+                    <br>
+                    <h class="meta_content">地點：JAMSIL INDOOR STADIUM 蠶室室內體育館</h>
+                    <br>
+                    <h class="meta_content">場次：</h>
+                    <br>
+                    <button class="session" onclick="location.href='position.html'">2022.03.18 (五) 18:30PM</button>
+                    <button class="session">2022.03.19 (六) 17:00PM</button>
+                    <button class="session">2022.03.20 (日) 17:00PM (KST)</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottombar">
+            <button class="bottom_link" href="#home">about us</a>
+            <button class="bottom_link" href="#news">服務條款</a>
+            <button class="bottom_link" href="#contact">聯絡資訊</a>
+            <button class="bottom_link" href="#about">隱私權</a>
+        </div>
+        
+        <!-- Load external JavaScript -->
+        <script src="js/scripts.js"></script>
+        
+    </body>
+
+</html>
