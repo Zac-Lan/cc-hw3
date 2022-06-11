@@ -8,7 +8,7 @@ node app.js
 ```
 
 ### in browser  
-網址列輸入```http://localhost:3000/index.html```  
+網址列輸入```http://localhost:3000```  
 
 ## 建立docker image  
 ```
