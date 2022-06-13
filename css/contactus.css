@@ -1,0 +1,165 @@
+/* Place your CSS styles in this file */
+
+h1 {
+    text-align: center;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: normal;
+}
+
+.topnav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 10px;
+    justify-content: space-between;
+}
+
+.nav_div {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.logo {
+    height:50px;
+    cursor: pointer;
+    /*vertical-align:bottom;
+    margin-left: 10px;*/
+}
+
+.contact_logo {
+    height:20px;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.nav_logo {
+    height:25px;
+    /*margin-bottom: 10px;
+    margin-left: 5px;*/
+}
+
+.nav_div_search {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    width: 25%;
+}
+
+.search {
+    height:24px;
+    font-size: 13px;
+    border-style: none;
+    color: #DBE4EB;
+    width: 100%;
+    outline: none;
+    /*margin-bottom: 10px;*/
+}
+
+::placeholder {
+  color: #DBE4EB;
+}
+
+.search_logo {
+    height: 18px;
+    /*margin-bottom: 10px;*/
+}
+
+.search_div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px #DBE4EB solid;
+    border-radius: 20px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.nav_text {
+    font-size: 15px;
+    color: #C3CCD2;
+    text-decoration: none;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 20px;
+    background-color: #e7eef3;
+}
+
+.nav_button {
+  float: left;
+  background-color: #e7eef3;
+  color: #888888;
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 17px;
+  border-style: none;
+}
+
+.nav_button:hover {
+  background-color: #f2f2f2;
+  color: black;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.bottombar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 20px;
+    background-color: #aaabac;
+}
+
+.bottom_link {
+  float: left;
+  background-color: #aaabac;
+  color: #e7eef3;
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 12px;
+  border-style: none;
+}
+
+.bottom_link:hover {
+  background-color: #f2f2f2;
+  color: black;
+}
+
+.content_title {
+    text-align: center;
+    padding: 20px;
+    width:50%;
+    margin:0 auto;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.content_div {
+    font-family: Comic Sans MS;
+    text-align: center;
+    padding: 40px;
+    width:50%;
+    margin:0 auto;
+}
