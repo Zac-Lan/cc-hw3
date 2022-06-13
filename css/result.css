@@ -23,6 +23,7 @@
 
 .logo {
     height:50px;
+    cursor: pointer;
     /*vertical-align:bottom;
     margin-left: 10px;*/
 }
