@@ -8,7 +8,7 @@ node app.js
 ```
 
 ### in browser  
-網址列輸入```http://localhost:3000```  
+網址列輸入```http://localhost:8080```  
 
 ## 建立docker image  
 ```
@@ -17,5 +17,5 @@ docker build -t ${image-name} .
 
 ## run docker container  
 ```
-sudo docker run -d --rm -p 3000:3000 --name ${container-name} ${image-name}  
+sudo docker run -d --rm -p 3000:8080 --name ${container-name} ${image-name}  
 ```
